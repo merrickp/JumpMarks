@@ -99,6 +99,10 @@
 		02306CB31ABFA2DC00C3FD5A /* JumpMarks */ = {
 			isa = PBXGroup;
 			children = (
+				02A652911ABFB690001F44D7 /* Xcode Headers */,
+				02A652901ABFB663001F44D7 /* Categories / Extensions */,
+				02A6528F1ABFB652001F44D7 /* Models */,
+				02A6528E1ABFB647001F44D7 /* External */,
 				02306CB81ABFA2DC00C3FD5A /* JumpMarks.h */,
 				02306CB91ABFA2DC00C3FD5A /* JumpMarks.m */,
 				02306CB41ABFA2DC00C3FD5A /* Supporting Files */,
@@ -131,6 +135,34 @@
 				02A6527D1ABFB387001F44D7 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		02A6528E1ABFB647001F44D7 /* External */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
+		02A6528F1ABFB652001F44D7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		02A652901ABFB663001F44D7 /* Categories / Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Categories / Extensions";
+			sourceTree = "<group>";
+		};
+		02A652911ABFB690001F44D7 /* Xcode Headers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Xcode Headers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
