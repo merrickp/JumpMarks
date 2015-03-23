@@ -1,0 +1,278 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02306CB01ABFA2DC00C3FD5A /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02306CAF1ABFA2DC00C3FD5A /* AppKit.framework */; };
+		02306CB21ABFA2DC00C3FD5A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02306CB11ABFA2DC00C3FD5A /* Foundation.framework */; };
+		02306CB71ABFA2DC00C3FD5A /* JumpMarks.xcscheme in Resources */ = {isa = PBXBuildFile; fileRef = 02306CB61ABFA2DC00C3FD5A /* JumpMarks.xcscheme */; };
+		02306CBA1ABFA2DC00C3FD5A /* JumpMarks.m in Sources */ = {isa = PBXBuildFile; fileRef = 02306CB91ABFA2DC00C3FD5A /* JumpMarks.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		02306CAC1ABFA2DC00C3FD5A /* JumpMarks.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JumpMarks.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		02306CAF1ABFA2DC00C3FD5A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		02306CB11ABFA2DC00C3FD5A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		02306CB51ABFA2DC00C3FD5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02306CB61ABFA2DC00C3FD5A /* JumpMarks.xcscheme */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = JumpMarks.xcscheme; path = JumpMarks.xcodeproj/xcshareddata/xcschemes/JumpMarks.xcscheme; sourceTree = SOURCE_ROOT; };
+		02306CB81ABFA2DC00C3FD5A /* JumpMarks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JumpMarks.h; sourceTree = "<group>"; };
+		02306CB91ABFA2DC00C3FD5A /* JumpMarks.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JumpMarks.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		02306CAA1ABFA2DC00C3FD5A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02306CB01ABFA2DC00C3FD5A /* AppKit.framework in Frameworks */,
+				02306CB21ABFA2DC00C3FD5A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		02306CA31ABFA2DC00C3FD5A = {
+			isa = PBXGroup;
+			children = (
+				02306CB31ABFA2DC00C3FD5A /* JumpMarks */,
+				02306CAE1ABFA2DC00C3FD5A /* Frameworks */,
+				02306CAD1ABFA2DC00C3FD5A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		02306CAD1ABFA2DC00C3FD5A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				02306CAC1ABFA2DC00C3FD5A /* JumpMarks.xcplugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		02306CAE1ABFA2DC00C3FD5A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				02306CAF1ABFA2DC00C3FD5A /* AppKit.framework */,
+				02306CB11ABFA2DC00C3FD5A /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		02306CB31ABFA2DC00C3FD5A /* JumpMarks */ = {
+			isa = PBXGroup;
+			children = (
+				02306CB81ABFA2DC00C3FD5A /* JumpMarks.h */,
+				02306CB91ABFA2DC00C3FD5A /* JumpMarks.m */,
+				02306CB41ABFA2DC00C3FD5A /* Supporting Files */,
+			);
+			path = JumpMarks;
+			sourceTree = "<group>";
+		};
+		02306CB41ABFA2DC00C3FD5A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				02306CB51ABFA2DC00C3FD5A /* Info.plist */,
+				02306CB61ABFA2DC00C3FD5A /* JumpMarks.xcscheme */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		02306CAB1ABFA2DC00C3FD5A /* JumpMarks */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02306CBD1ABFA2DC00C3FD5A /* Build configuration list for PBXNativeTarget "JumpMarks" */;
+			buildPhases = (
+				02306CA81ABFA2DC00C3FD5A /* Sources */,
+				02306CA91ABFA2DC00C3FD5A /* Resources */,
+				02306CAA1ABFA2DC00C3FD5A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JumpMarks;
+			productName = JumpMarks;
+			productReference = 02306CAC1ABFA2DC00C3FD5A /* JumpMarks.xcplugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		02306CA41ABFA2DC00C3FD5A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Merrick Poon";
+				TargetAttributes = {
+					02306CAB1ABFA2DC00C3FD5A = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 02306CA71ABFA2DC00C3FD5A /* Build configuration list for PBXProject "JumpMarks" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 02306CA31ABFA2DC00C3FD5A;
+			productRefGroup = 02306CAD1ABFA2DC00C3FD5A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				02306CAB1ABFA2DC00C3FD5A /* JumpMarks */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		02306CA91ABFA2DC00C3FD5A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02306CB71ABFA2DC00C3FD5A /* JumpMarks.xcscheme in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		02306CA81ABFA2DC00C3FD5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02306CBA1ABFA2DC00C3FD5A /* JumpMarks.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		02306CBB1ABFA2DC00C3FD5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+			};
+			name = Debug;
+		};
+		02306CBC1ABFA2DC00C3FD5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+			};
+			name = Release;
+		};
+		02306CBE1ABFA2DC00C3FD5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "$(HOME)";
+				INFOPLIST_FILE = JumpMarks/Info.plist;
+				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xcplugin;
+			};
+			name = Debug;
+		};
+		02306CBF1ABFA2DC00C3FD5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "$(HOME)";
+				INFOPLIST_FILE = JumpMarks/Info.plist;
+				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xcplugin;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		02306CA71ABFA2DC00C3FD5A /* Build configuration list for PBXProject "JumpMarks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02306CBB1ABFA2DC00C3FD5A /* Debug */,
+				02306CBC1ABFA2DC00C3FD5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		02306CBD1ABFA2DC00C3FD5A /* Build configuration list for PBXNativeTarget "JumpMarks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02306CBE1ABFA2DC00C3FD5A /* Debug */,
+				02306CBF1ABFA2DC00C3FD5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 02306CA41ABFA2DC00C3FD5A /* Project object */;
+}
