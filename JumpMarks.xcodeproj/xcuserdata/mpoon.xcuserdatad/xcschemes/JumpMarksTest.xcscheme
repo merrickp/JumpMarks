@@ -1,36 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0500"
-   version = "2.0">
+   LastUpgradeVersion = "0620"
+   version = "1.3">
    <BuildAction
-      parallelizeBuildables = "NO"
-      buildImplicitDependencies = "NO">
+      parallelizeBuildables = "YES"
+      buildImplicitDependencies = "YES">
       <BuildActionEntries>
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "02306CAB1ABFA2DC00C3FD5A"
-               BuildableName = "JumpMarks.xcplugin"
-               BlueprintName = "JumpMarks"
-               ReferencedContainer = "container:JumpMarks.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8966AFCA173EB7BF004150C0"
-               BuildableName = "JumpMarksTests.xctest"
-               BlueprintName = "JumpMarksTests"
+               BlueprintIdentifier = "02A652791ABFB387001F44D7"
+               BuildableName = "JumpMarksTest.xctest"
+               BlueprintName = "JumpMarksTest"
                ReferencedContainer = "container:JumpMarks.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -56,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "02306CAB1ABFA2DC00C3FD5A"
-            BuildableName = "JumpMarks.xcplugin"
-            BlueprintName = "JumpMarks"
+            BlueprintIdentifier = "02A652791ABFB387001F44D7"
+            BuildableName = "JumpMarksTest.xctest"
+            BlueprintName = "JumpMarksTest"
             ReferencedContainer = "container:JumpMarks.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -70,20 +56,14 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
-      debugDocumentVersioning = "NO"
-      debugXPCServices = "NO"
-      allowLocationSimulation = "NO"
-      viewDebuggingEnabled = "No">
-      <PathRunnable
-         runnableDebuggingMode = "0"
-         FilePath = "/Applications/Xcode.app">
-      </PathRunnable>
+      debugDocumentVersioning = "YES"
+      allowLocationSimulation = "YES">
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "02306CAB1ABFA2DC00C3FD5A"
-            BuildableName = "JumpMarks.xcplugin"
-            BlueprintName = "JumpMarks"
+            BlueprintIdentifier = "02A652791ABFB387001F44D7"
+            BuildableName = "JumpMarksTest.xctest"
+            BlueprintName = "JumpMarksTest"
             ReferencedContainer = "container:JumpMarks.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -99,9 +79,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "02306CAB1ABFA2DC00C3FD5A"
-            BuildableName = "JumpMarks.xcplugin"
-            BlueprintName = "JumpMarks"
+            BlueprintIdentifier = "02A652791ABFB387001F44D7"
+            BuildableName = "JumpMarksTest.xctest"
+            BlueprintName = "JumpMarksTest"
             ReferencedContainer = "container:JumpMarks.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
