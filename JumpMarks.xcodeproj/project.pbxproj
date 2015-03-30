@@ -11,12 +11,16 @@
 		02306CB21ABFA2DC00C3FD5A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02306CB11ABFA2DC00C3FD5A /* Foundation.framework */; };
 		02306CB71ABFA2DC00C3FD5A /* JumpMarks.xcscheme in Resources */ = {isa = PBXBuildFile; fileRef = 02306CB61ABFA2DC00C3FD5A /* JumpMarks.xcscheme */; };
 		02306CBA1ABFA2DC00C3FD5A /* JumpMarks.m in Sources */ = {isa = PBXBuildFile; fileRef = 02306CB91ABFA2DC00C3FD5A /* JumpMarks.m */; };
+		02A02D7F1ABFC0A1000B56F3 /* DVTTextSidebarView+JumpMarks.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A02D7E1ABFC0A1000B56F3 /* DVTTextSidebarView+JumpMarks.m */; };
+		02A02D821ABFCC72000B56F3 /* JumpMark.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A02D811ABFCC72000B56F3 /* JumpMark.m */; };
+		02A02D851ABFCFFE000B56F3 /* JumpMarkList.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A02D841ABFCFFE000B56F3 /* JumpMarkList.m */; };
 		02A6527F1ABFB387001F44D7 /* JumpMarksTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A6527E1ABFB387001F44D7 /* JumpMarksTest.m */; };
 		02A652851ABFB43F001F44D7 /* DVTFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02A652831ABFB43F001F44D7 /* DVTFoundation.framework */; };
 		02A652861ABFB43F001F44D7 /* DVTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02A652841ABFB43F001F44D7 /* DVTKit.framework */; };
 		02A652891ABFB458001F44D7 /* IDEFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02A652871ABFB458001F44D7 /* IDEFoundation.framework */; };
 		02A6528A1ABFB458001F44D7 /* IDEKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02A652881ABFB458001F44D7 /* IDEKit.framework */; };
 		02A6528C1ABFB485001F44D7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02A6528B1ABFB485001F44D7 /* Cocoa.framework */; };
+		02A652991ABFBAA1001F44D7 /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A652971ABFBAA1001F44D7 /* JRSwizzle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +31,12 @@
 		02306CB61ABFA2DC00C3FD5A /* JumpMarks.xcscheme */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = JumpMarks.xcscheme; path = JumpMarks.xcodeproj/xcshareddata/xcschemes/JumpMarks.xcscheme; sourceTree = SOURCE_ROOT; };
 		02306CB81ABFA2DC00C3FD5A /* JumpMarks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JumpMarks.h; sourceTree = "<group>"; };
 		02306CB91ABFA2DC00C3FD5A /* JumpMarks.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JumpMarks.m; sourceTree = "<group>"; };
+		02A02D7D1ABFC0A1000B56F3 /* DVTTextSidebarView+JumpMarks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DVTTextSidebarView+JumpMarks.h"; sourceTree = "<group>"; };
+		02A02D7E1ABFC0A1000B56F3 /* DVTTextSidebarView+JumpMarks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DVTTextSidebarView+JumpMarks.m"; sourceTree = "<group>"; };
+		02A02D801ABFCC72000B56F3 /* JumpMark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JumpMark.h; path = Models/JumpMark.h; sourceTree = "<group>"; };
+		02A02D811ABFCC72000B56F3 /* JumpMark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JumpMark.m; path = Models/JumpMark.m; sourceTree = "<group>"; };
+		02A02D831ABFCFFE000B56F3 /* JumpMarkList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JumpMarkList.h; path = Models/JumpMarkList.h; sourceTree = "<group>"; };
+		02A02D841ABFCFFE000B56F3 /* JumpMarkList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JumpMarkList.m; path = Models/JumpMarkList.m; sourceTree = "<group>"; };
 		02A6527A1ABFB387001F44D7 /* JumpMarksTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JumpMarksTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02A6527D1ABFB387001F44D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02A6527E1ABFB387001F44D7 /* JumpMarksTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JumpMarksTest.m; sourceTree = "<group>"; };
@@ -36,6 +46,13 @@
 		02A652881ABFB458001F44D7 /* IDEKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IDEKit.framework; path = ../../../../../../../Applications/Xcode.app/Contents/Frameworks/IDEKit.framework; sourceTree = "<group>"; };
 		02A6528B1ABFB485001F44D7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		02A6528D1ABFB4DA001F44D7 /* JumpMarks-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JumpMarks-Prefix.pch"; sourceTree = "<group>"; };
+		02A652921ABFBA84001F44D7 /* DVTFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DVTFoundation.h; path = XcodeHeaders/DVTFoundation.h; sourceTree = "<group>"; };
+		02A652931ABFBA84001F44D7 /* DVTKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DVTKit.h; path = XcodeHeaders/DVTKit.h; sourceTree = "<group>"; };
+		02A652941ABFBA84001F44D7 /* IDEFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IDEFoundation.h; path = XcodeHeaders/IDEFoundation.h; sourceTree = "<group>"; };
+		02A652951ABFBA84001F44D7 /* IDEKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IDEKit.h; path = XcodeHeaders/IDEKit.h; sourceTree = "<group>"; };
+		02A652961ABFBA84001F44D7 /* IDESourceEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IDESourceEditor.h; path = XcodeHeaders/IDESourceEditor.h; sourceTree = "<group>"; };
+		02A652971ABFBAA1001F44D7 /* JRSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JRSwizzle.m; path = External/JRSwizzle.m; sourceTree = "<group>"; };
+		02A652981ABFBAA1001F44D7 /* JRSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JRSwizzle.h; path = External/JRSwizzle.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +157,8 @@
 		02A6528E1ABFB647001F44D7 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				02A652971ABFBAA1001F44D7 /* JRSwizzle.m */,
+				02A652981ABFBAA1001F44D7 /* JRSwizzle.h */,
 			);
 			name = External;
 			sourceTree = "<group>";
@@ -147,6 +166,10 @@
 		02A6528F1ABFB652001F44D7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				02A02D801ABFCC72000B56F3 /* JumpMark.h */,
+				02A02D811ABFCC72000B56F3 /* JumpMark.m */,
+				02A02D831ABFCFFE000B56F3 /* JumpMarkList.h */,
+				02A02D841ABFCFFE000B56F3 /* JumpMarkList.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -154,6 +177,8 @@
 		02A652901ABFB663001F44D7 /* Categories / Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				02A02D7D1ABFC0A1000B56F3 /* DVTTextSidebarView+JumpMarks.h */,
+				02A02D7E1ABFC0A1000B56F3 /* DVTTextSidebarView+JumpMarks.m */,
 			);
 			name = "Categories / Extensions";
 			sourceTree = "<group>";
@@ -161,6 +186,11 @@
 		02A652911ABFB690001F44D7 /* Xcode Headers */ = {
 			isa = PBXGroup;
 			children = (
+				02A652921ABFBA84001F44D7 /* DVTFoundation.h */,
+				02A652931ABFBA84001F44D7 /* DVTKit.h */,
+				02A652941ABFBA84001F44D7 /* IDEFoundation.h */,
+				02A652951ABFBA84001F44D7 /* IDEKit.h */,
+				02A652961ABFBA84001F44D7 /* IDESourceEditor.h */,
 			);
 			name = "Xcode Headers";
 			sourceTree = "<group>";
@@ -260,6 +290,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02A02D821ABFCC72000B56F3 /* JumpMark.m in Sources */,
+				02A652991ABFBAA1001F44D7 /* JRSwizzle.m in Sources */,
+				02A02D851ABFCFFE000B56F3 /* JumpMarkList.m in Sources */,
+				02A02D7F1ABFC0A1000B56F3 /* DVTTextSidebarView+JumpMarks.m in Sources */,
 				02306CBA1ABFA2DC00C3FD5A /* JumpMarks.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -450,6 +484,7 @@
 				02A652811ABFB387001F44D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
