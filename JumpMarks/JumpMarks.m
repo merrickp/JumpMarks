@@ -18,6 +18,8 @@ static JumpMarks *sharedPlugin;
 @interface JumpMarks()
 
 @property (nonatomic, strong, readwrite) NSBundle *bundle;
+@property (nonatomic) NSInteger lastMarkNumber;
+
 @end
 
 @implementation JumpMarks
@@ -40,16 +42,11 @@ static JumpMarks *sharedPlugin;
 }
 
 - (id)initWithBundle:(NSBundle *)plugin {
-    if (self = [super init]) {
-        self.bundle = plugin;
-
-        [self buildMenuItems];
-    }
-    return self;
-}
-
-- (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+	if (self = [super init]) {
+		self.bundle = plugin;
+		[self buildMenuItems];
+	}
+	return self;
 }
 
 - (void)buildMenuItems {
@@ -99,49 +96,69 @@ static JumpMarks *sharedPlugin;
 #pragma mark - Menu item hooks
 
 - (void)clearMarks:(NSMenuItem*)sender {
-    
+	[[JumpMarkList sharedInstance] removeAllMarks];
+// TODO: refresh all active editors on screen (not just current one for split editors)
+	[[[self getCurrentSourceCodeEditor] valueForKey:@"_sidebarView"] setNeedsDisplay:YES];
 }
 
 - (void)jumpToPrevMark:(NSMenuItem*)sender {
-    
+	NSNumber *markNumber = [[JumpMarkList sharedInstance] getPrevMarkNumber:_lastMarkNumber];
+	if (markNumber) {
+		[self jumpToMarkNumber:[markNumber integerValue]];
+	}
 }
 
 - (void)jumpToNextMark:(NSMenuItem*)sender {
-    
+	NSNumber *markNumber = [[JumpMarkList sharedInstance] getNextMarkNumber:_lastMarkNumber];
+	if (markNumber) {
+		[self jumpToMarkNumber:[markNumber integerValue]];
+	}
 }
 
 - (void)jumpToMark:(NSMenuItem*)sender {
     NSNumber *markNumber = sender.representedObject;
-    JumpMark* mark = [[JumpMarkList sharedInstance] getMarkNumber:[markNumber integerValue]];
+	[self jumpToMarkNumber:[markNumber integerValue]];
+}
 
-    if(mark) {
-        NSString *currentPath = [self getCurrentSourceCodeEditor].sourceCodeDocument.fileURL.path;
-        if(![mark.filePath isEqualToString:currentPath]){
-            IDEDocumentController* ctrl = [IDEDocumentController sharedDocumentController];
-            NSError* error;
-            NSURL* doc = [NSURL fileURLWithPath:mark.filePath];
-            [ctrl openDocumentWithContentsOfURL:doc display:YES error:&error];
-        }
-    }
+- (BOOL)jumpToMarkNumber:(NSInteger)markNumber {
+    JumpMark* mark = [[JumpMarkList sharedInstance] getMarkNumber:markNumber];
 
-    IDESourceCodeEditor *editor = [self getCurrentSourceCodeEditor];
-    // Ignore comparison editors
-    if (editor) {
-        DVTSourceTextView* textView = editor.textView;
-        
-        NSUInteger lineNumber = mark.lineNumber;
-        NSUInteger lineLocation = [self locationRangeForTextView:textView forLine:lineNumber-1];
-        NSRange locationRange = NSMakeRange(lineLocation, 0);
-        
-        [textView setSelectedRange:locationRange];
-        [textView scrollRangeToVisible:locationRange];
-        [textView showFindIndicatorForRange:locationRange];
-    }
+	if(mark) {
+		NSString *currentPath = [self getCurrentSourceCodeEditor].sourceCodeDocument.fileURL.path;
+		if(![mark.filePath isEqualToString:currentPath]){
+			[self jumpToFileURL:[NSURL fileURLWithPath:mark.filePath]];
+		}
+
+		IDESourceCodeEditor *editor = [self getCurrentSourceCodeEditor];
+		// Ignore comparison editors
+		if (editor) {
+			DVTSourceTextView* textView = editor.textView;
+			
+			NSUInteger lineNumber = mark.lineNumber;
+			NSUInteger lineLocation = [self locationRangeForTextView:textView forLine:lineNumber-1];
+			NSRange locationRange = NSMakeRange(lineLocation, 0);
+			
+			[textView setSelectedRange:locationRange];
+			[textView scrollRangeToVisible:locationRange];
+			[textView showFindIndicatorForRange:locationRange];
+		}
+		_lastMarkNumber = markNumber;
+		return YES;
+	}
+	return NO;
+}
+
+- (void)jumpToFileURL:(NSURL *)fileURL {
+	DVTDocumentLocation *documentLocation = [[DVTDocumentLocation alloc] initWithDocumentURL:fileURL timestamp:nil];
+	IDEEditorOpenSpecifier *openSpecifier = [IDEEditorOpenSpecifier structureEditorOpenSpecifierForDocumentLocation:documentLocation
+																										inWorkspace:[self currentIDEWorkspace]
+																											  error:nil];
+	[[self currentIDEWorkspaceWindowController].editorArea.lastActiveEditorContext openEditorOpenSpecifier:openSpecifier];
 }
 
 - (void)toggleMark:(NSMenuItem*)sender {
     NSInteger markNumber = [sender.representedObject integerValue];
-    
+	
     IDESourceCodeEditor *editor = [self getCurrentSourceCodeEditor];
     // Ignore comparison editors
     if (editor) {
@@ -150,6 +167,8 @@ static JumpMarks *sharedPlugin;
         [[JumpMarkList sharedInstance] toggleMarkNumber:markNumber
                                                filePath:sourceCodeDocument.fileURL.path
                                              lineNumber:[self currentLineNumberWithTextView:textView]];
+		[[editor valueForKey:@"_sidebarView"] setNeedsDisplay:YES];
+		_lastMarkNumber = markNumber;
         [[JumpMarkList sharedInstance] flush];
     }
 }
