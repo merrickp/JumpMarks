@@ -21,6 +21,10 @@ To uninstall, remove the plugin file `JumpMarks.xcplugin` from `~/Library/Applic
 Toggle by typing `Shift + Option + [0-9]`
 ![2015-04-06 04_14_59](https://cloud.githubusercontent.com/assets/1057179/7003724/2891953e-dc14-11e4-8285-68bc2aed4df1.gif)
 
+####Go to specific JumpMark:####
+Jump directly to numbered mark by typing `Option + [0-9]`
+![2015-04-06 04_35_36](https://cloud.githubusercontent.com/assets/1057179/7003874/92ce3ee6-dc16-11e4-8197-241ffe7929c8.gif)
+
 ##Acknowledgements##
 - The idea came from [DPack](http://www.usysware.com/dpack/Bookmarks.aspx), a plugin for Visual Studio that had this functionality that I wanted to port over.
 - The xCode Template plugin used to create this project:  https://github.com/kattrali/Xcode-Plugin-Template
