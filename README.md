@@ -1,5 +1,7 @@
 ![logo](https://cloud.githubusercontent.com/assets/1057179/6772810/57a5ca72-d0c3-11e4-88fe-ddc6b9b33339.png)
 
+[![Build Status](https://travis-ci.org/merrickp/JumpMarks.svg?branch=master)](https://travis-ci.org/merrickp/JumpMarks)
+
 #Overview#
 
 JumpMarks is an Xcode plugin to navigate your project files by numbered bookmarks. When developing applications, it is often not enough to be able to jump between just two places in our code by navigating forward and backward in history. There may be logical components that we jump around perhaps between model, view, and controller (or view model). When refactoring, we may jump around to different files in our project to compare the old and new blocks of code. Before a code review, we may set all of the locations that we want reviewed in the IDE.
