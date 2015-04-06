@@ -25,6 +25,14 @@ Toggle by typing `Shift + Option + [0-9]`
 Jump directly to numbered mark by typing `Option + [0-9]`
 ![2015-04-06 04_35_36](https://cloud.githubusercontent.com/assets/1057179/7003874/92ce3ee6-dc16-11e4-8197-241ffe7929c8.gif)
 
+####Go to next/previous JumpMark:####
+Jump to next/prev set mark by typing `Option + ]` or `Option + [`
+![2015-04-06 04_55_34](https://cloud.githubusercontent.com/assets/1057179/7004000/5bdedabe-dc19-11e4-9257-c7b40538afbf.gif)
+
+Other options can be found in the `JumpMarks` submenu added in the `View` menu in the menu bar.
+
+Marks will be persisted in a plist file named ${USER}.jumpmarks in the project's xcuserdata.
+
 ##Acknowledgements##
 - The idea came from [DPack](http://www.usysware.com/dpack/Bookmarks.aspx), a plugin for Visual Studio that had this functionality that I wanted to port over.
 - The xCode Template plugin used to create this project:  https://github.com/kattrali/Xcode-Plugin-Template
