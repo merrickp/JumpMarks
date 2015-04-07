@@ -58,15 +58,16 @@ static JumpMarks *sharedPlugin;
         jumpMarks.submenu = submenu;
         
         // General shortcuts
-        NSMenuItem *clearMarks = [submenu addItemWithTitle:@"Clear all Marks" action:@selector(clearMarks:) keyEquivalent:@""];
+        NSMenuItem *clearMarks = [submenu addItemWithTitle:@"Clear all Marks" action:@selector(clearMarks:) keyEquivalent:@"C"];
+		[clearMarks setKeyEquivalentModifierMask:NSAlternateKeyMask];
         clearMarks.target = self;
         
         NSMenuItem *prevMark = [submenu addItemWithTitle:@"Jump To Prev Mark" action:@selector(jumpToPrevMark:) keyEquivalent:@"["];
-        [prevMark setKeyEquivalentModifierMask: NSAlternateKeyMask];
+        [prevMark setKeyEquivalentModifierMask:NSAlternateKeyMask];
         prevMark.target = self;
         
         NSMenuItem *nextMark = [submenu addItemWithTitle:@"Jump To Next Mark" action:@selector(jumpToNextMark:) keyEquivalent:@"]"];
-        [nextMark setKeyEquivalentModifierMask: NSAlternateKeyMask];
+        [nextMark setKeyEquivalentModifierMask:NSAlternateKeyMask];
         nextMark.target = self;
         
         [submenu addItem:[NSMenuItem separatorItem]];
@@ -75,7 +76,7 @@ static JumpMarks *sharedPlugin;
         for(int i=0; i<NUM_MARKS; i++) {
             NSMenuItem *toggleMark = [submenu addItemWithTitle:[NSString stringWithFormat:@"Toggle #%d", i]
                                                         action:@selector(toggleMark:) keyEquivalent:[NSString stringWithFormat:@"%d", i]];
-            [toggleMark setKeyEquivalentModifierMask: NSAlternateKeyMask | NSShiftKeyMask];
+            [toggleMark setKeyEquivalentModifierMask:NSAlternateKeyMask | NSShiftKeyMask];
             [toggleMark setRepresentedObject:@(i)];
             toggleMark.target = self;
         }
