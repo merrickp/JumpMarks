@@ -18,15 +18,15 @@ To uninstall, remove the plugin file `JumpMarks.xcplugin` from `~/Library/Applic
 
 ##Usage##
 ####Toggling JumpMarks:####
-Toggle by typing `Shift + Option + [0-9]`
+Toggle by typing <kbd>Shift</kbd> + <kbd>Option</kbd> + [<kbd>0</kbd>-<kbd>9</kbd>]
 ![2015-04-06 04_14_59](https://cloud.githubusercontent.com/assets/1057179/7003724/2891953e-dc14-11e4-8285-68bc2aed4df1.gif)
 
 ####Go to specific JumpMark:####
-Jump directly to numbered mark by typing `Option + [0-9]`
+Jump directly to numbered mark by typing <kbd>Option</kbd> + [<kbd>0</kbd>-<kbd>9</kbd>]
 ![2015-04-06 04_35_36](https://cloud.githubusercontent.com/assets/1057179/7003874/92ce3ee6-dc16-11e4-8197-241ffe7929c8.gif)
 
 ####Go to next/previous JumpMark:####
-Jump to next/prev set mark by typing `Option + ]` or `Option + [`
+Jump to next/prev set mark by typing <kbd>Option</kbd> + <kbd>]</kbd> or <kbd>Option</kbd> + <kbd>[</kbd>, respectively
 ![2015-04-06 04_55_34](https://cloud.githubusercontent.com/assets/1057179/7004000/5bdedabe-dc19-11e4-9257-c7b40538afbf.gif)
 
 Other options can be found in the `JumpMarks` submenu added in the `View` menu in the menu bar.
