@@ -28,7 +28,7 @@
 + (instancetype)sharedInstance {
     static JumpMarkList* instance;
     if(!instance) {
-        instance = [[JumpMarkList alloc] init];
+        instance = [JumpMarkList new];
     }
     return instance;
 }  
@@ -55,9 +55,12 @@
 }
 
 - (void)flush {
-    if (_filePath) {
-        [NSKeyedArchiver archiveRootObject:_marksDict toFile:_filePath];
-    }
+	if (_filePath) {
+		NSDictionary *archiveDict = [_marksDict copy];
+		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+			[NSKeyedArchiver archiveRootObject:archiveDict toFile:_filePath];
+		});
+	}
 }
 
 #pragma mark - Mark manipulation/retrieval
