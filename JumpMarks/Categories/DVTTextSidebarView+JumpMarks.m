@@ -9,6 +9,8 @@
 #import "DVTTextSidebarView+JumpMarks.h"
 #import "JRSwizzle.h"
 #import "JumpMarkList.h"
+#import "IDEKit.h"
+#import "IDEWorkspaceDocument+JumpMarks.h"
 
 @implementation DVTTextSidebarView (JumpMarks)
 
@@ -26,11 +28,12 @@
                                 linesToReplace:(id)replace
                               getParaRectBlock:(id)rectBlock {
     
-//    NSArray *fileMarks = [[JumpMarkList sharedInstance] marksForFilePath:[self window].representedFilename];
-    //mpoon todo
     NSArray *fileMarks = nil;
-    
-    NSLog(@"%@", self.window.delegate);
+	if([self.window.delegate isKindOfClass:IDEWorkspaceWindowController.class]) {
+		IDEWorkspaceWindowController *controller = (IDEWorkspaceWindowController*)self.window.delegate;
+		IDEWorkspace *workspace = [controller valueForKey:@"_workspace"];
+		fileMarks = [workspace.jumpMarks marksForFilePath:[[self window] representedFilename]];
+	}
 
     if([fileMarks count]) {
         NSSortDescriptor *lineNumberSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"lineNumber" ascending:YES];
