@@ -44,9 +44,16 @@ static JumpMarks *sharedPlugin;
 - (id)initWithBundle:(NSBundle *)plugin {
 	if (self = [super init]) {
 		self.bundle = plugin;
-		[self buildMenuItems];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(applicationDidFinishLaunching:)
+                                                     name:NSApplicationDidFinishLaunchingNotification
+                                                   object:nil];
 	}
 	return self;
+}
+
+- (void)applicationDidFinishLaunching:(NSNotification*)notification {
+    [self buildMenuItems];
 }
 
 - (void)buildMenuItems {
