@@ -10,6 +10,7 @@
 #import "IDEKit.h"
 #import "IDESourceEditor.h"
 #import "JumpMarkList.h"
+#import "IDEWorkspaceDocument+JumpMarks.h"
 
 static JumpMarks *sharedPlugin;
 
@@ -104,20 +105,20 @@ static JumpMarks *sharedPlugin;
 #pragma mark - Menu item hooks
 
 - (void)clearMarks:(NSMenuItem*)sender {
-	[[JumpMarkList sharedInstance] removeAllMarks];
+	[[self currentJumpMarks] removeAllMarks];
 // TODO: refresh all active editors on screen (not just current one for split editors)
 	[[[self getCurrentSourceCodeEditor] valueForKey:@"_sidebarView"] setNeedsDisplay:YES];
 }
 
 - (void)jumpToPrevMark:(NSMenuItem*)sender {
-	NSNumber *markNumber = [[JumpMarkList sharedInstance] getPrevMarkNumber:_lastMarkNumber];
+	NSNumber *markNumber = [[self currentJumpMarks] getPrevMarkNumber:_lastMarkNumber];
 	if (markNumber) {
 		[self jumpToMarkNumber:[markNumber integerValue]];
 	}
 }
 
 - (void)jumpToNextMark:(NSMenuItem*)sender {
-	NSNumber *markNumber = [[JumpMarkList sharedInstance] getNextMarkNumber:_lastMarkNumber];
+	NSNumber *markNumber = [[self currentJumpMarks] getNextMarkNumber:_lastMarkNumber];
 	if (markNumber) {
 		[self jumpToMarkNumber:[markNumber integerValue]];
 	}
@@ -129,7 +130,7 @@ static JumpMarks *sharedPlugin;
 }
 
 - (BOOL)jumpToMarkNumber:(NSInteger)markNumber {
-    JumpMark* mark = [[JumpMarkList sharedInstance] getMarkNumber:markNumber];
+    JumpMark* mark = [[self currentJumpMarks] getMarkNumber:markNumber];
 
 	if(mark) {
 		NSString *currentPath = [self getCurrentSourceCodeEditor].sourceCodeDocument.fileURL.path;
@@ -172,12 +173,12 @@ static JumpMarks *sharedPlugin;
     if (editor) {
         DVTSourceTextView* textView = editor.textView;
         IDESourceCodeDocument *sourceCodeDocument = editor.sourceCodeDocument;
-        [[JumpMarkList sharedInstance] toggleMarkNumber:markNumber
+        [[self currentJumpMarks] toggleMarkNumber:markNumber
                                                filePath:sourceCodeDocument.fileURL.path
                                              lineNumber:[self currentLineNumberWithTextView:textView]];
 		[[editor valueForKey:@"_sidebarView"] setNeedsDisplay:YES];
 		_lastMarkNumber = markNumber;
-        [[JumpMarkList sharedInstance] flush];
+        [[self currentJumpMarks] flush];
     }
 }
 
@@ -191,6 +192,12 @@ static JumpMarks *sharedPlugin;
         return (IDESourceCodeEditor*)editor;
     }
     return nil;
+}
+
+// Returns the jumpmarks for the workspace associated with the current document open
+// if there are projects projects open
+- (JumpMarkList*)currentJumpMarks {
+    return [self currentIDEWorkspace].jumpMarks;
 }
 
 - (IDEWorkspace*)currentIDEWorkspace {

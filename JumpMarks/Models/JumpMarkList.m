@@ -17,41 +17,31 @@
 
 @implementation JumpMarkList
 
-- (instancetype)init {
+- (instancetype)initWithCustomDataPath:(NSString*)customDataPath {
     self = [super init];
     if(self) {
         _marksDict = [NSMutableDictionary new];
+        _customDataPath = customDataPath;
+        _filePath = [NSString pathWithComponents:@[customDataPath,
+                                                   [NSUserName() stringByAppendingPathExtension:@"jumpmarks"]]];
+        [self load];
     }
     return self;
 }
 
-+ (instancetype)sharedInstance {
-    static JumpMarkList* instance;
-    if(!instance) {
-        instance = [JumpMarkList new];
-    }
-    return instance;
-}  
-
 #pragma mark - Persistence methods
 
-- (void)setCustomDataPath:(NSString *)customDataPath {
-	_customDataPath = customDataPath;
-	_filePath = [NSString pathWithComponents:@[customDataPath,
-											   [NSUserName() stringByAppendingPathExtension:@"jumpmarks"]]];
-}
-
 - (void)load {
-	if (_filePath) {
-		id data = [NSKeyedUnarchiver unarchiveObjectWithFile:_filePath];
-		if([data isKindOfClass:[NSDictionary class]]) {
-			[data enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-				if([key isKindOfClass:[NSNumber class]] && [obj isKindOfClass:[JumpMark class]]) {
-					_marksDict[key] = obj;
-				}
-			}];
-		}
-	}
+    if(_filePath) {
+        id data = [NSKeyedUnarchiver unarchiveObjectWithFile:_filePath];
+        if([data isKindOfClass:[NSDictionary class]]) {
+            [data enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+                if([key isKindOfClass:[NSNumber class]] && [obj isKindOfClass:[JumpMark class]]) {
+                    _marksDict[key] = obj;
+                }
+            }];
+        }
+    }
 }
 
 - (void)flush {

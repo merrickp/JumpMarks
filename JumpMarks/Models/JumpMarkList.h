@@ -11,11 +11,11 @@
 
 @interface JumpMarkList : NSObject
 
-+ (instancetype)sharedInstance;
-
 // The marks should be stored with the associated Xcode project's custom data path.
 @property (nonatomic, strong) NSString *customDataPath;
 @property (nonatomic, strong) NSString *filePath;
+
+- (instancetype)initWithCustomDataPath:(NSString*)customDataPath;
 
 // Persistence
 - (void)load;

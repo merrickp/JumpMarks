@@ -26,7 +26,11 @@
                                 linesToReplace:(id)replace
                               getParaRectBlock:(id)rectBlock {
     
-    NSArray *fileMarks = [[JumpMarkList sharedInstance] marksForFilePath:[self window].representedFilename];
+//    NSArray *fileMarks = [[JumpMarkList sharedInstance] marksForFilePath:[self window].representedFilename];
+    //mpoon todo
+    NSArray *fileMarks = nil;
+    
+    NSLog(@"%@", self.window.delegate);
 
     if([fileMarks count]) {
         NSSortDescriptor *lineNumberSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"lineNumber" ascending:YES];

@@ -8,9 +8,16 @@
 
 #import "IDEKit.h"
 #import "IDEFoundation.h"
+#import "JumpMarkList.h"
 
 @interface IDEWorkspaceDocument (JumpMarks)
 
 - (void)jumpmarks__setWorkspace:(IDEWorkspace*)arg1;
+
+@end
+
+@interface IDEWorkspace (JumpMarks)
+
+@property(nonatomic, strong) JumpMarkList *jumpMarks;
 
 @end

@@ -9,6 +9,7 @@
 #import "IDEWorkspaceDocument+JumpMarks.h"
 #import "JRSwizzle.h"
 #import "JumpMarkList.h"
+#import <objc/runtime.h>
 
 @implementation IDEWorkspaceDocument (JumpMarks)
 
@@ -22,10 +23,23 @@
 - (void)jumpmarks__setWorkspace:(IDEWorkspace*)workspace {
 	NSString* customPathString = workspace.customDataStore.customDataPath.pathString;
 	if (customPathString) {
-		[[JumpMarkList sharedInstance] setCustomDataPath:customPathString];
-		[[JumpMarkList sharedInstance] load];
+        workspace.jumpMarks = [[JumpMarkList alloc] initWithCustomDataPath:customPathString];
 	}
 	return [self jumpmarks__setWorkspace:workspace];
+}
+
+@end
+
+@implementation IDEWorkspace (JumpMarks)
+
+static char defaultHashKey;
+
+- (void)setJumpMarks:(JumpMarkList *)jumpMarks {
+    objc_setAssociatedObject(self, &defaultHashKey, jumpMarks, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (JumpMarkList*)jumpMarks {
+    return objc_getAssociatedObject(self, &defaultHashKey) ;
 }
 
 @end
