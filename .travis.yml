@@ -1,3 +1,7 @@
 language: objective-c
 xcode_project: JumpMarks.xcodeproj
 xcode_scheme: JumpMarks
+
+branches:
+  only:
+    - master
