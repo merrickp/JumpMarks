@@ -1,0 +1,3 @@
+github "specta/specta" ~> 0.5
+github "specta/expecta" "master"
+github "erikdoe/ocmock" "master"

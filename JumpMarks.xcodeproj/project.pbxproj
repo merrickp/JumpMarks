@@ -11,6 +11,12 @@
 		02306CB21ABFA2DC00C3FD5A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02306CB11ABFA2DC00C3FD5A /* Foundation.framework */; };
 		02306CB71ABFA2DC00C3FD5A /* JumpMarks.xcscheme in Resources */ = {isa = PBXBuildFile; fileRef = 02306CB61ABFA2DC00C3FD5A /* JumpMarks.xcscheme */; };
 		02306CBA1ABFA2DC00C3FD5A /* JumpMarks.m in Sources */ = {isa = PBXBuildFile; fileRef = 02306CB91ABFA2DC00C3FD5A /* JumpMarks.m */; };
+		0230768F1B5F421D00978BFE /* Expecta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0230768B1B5F3FFD00978BFE /* Expecta.framework */; };
+		023076901B5F421D00978BFE /* Specta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0230768C1B5F3FFD00978BFE /* Specta.framework */; };
+		023076931B5F437F00978BFE /* Expecta.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 0230768B1B5F3FFD00978BFE /* Expecta.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		023076941B5F437F00978BFE /* Specta.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 0230768C1B5F3FFD00978BFE /* Specta.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		023076961B60925A00978BFE /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 023076951B60925A00978BFE /* OCMock.framework */; };
+		023076971B60926300978BFE /* OCMock.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 023076951B60925A00978BFE /* OCMock.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		02A02D821ABFCC72000B56F3 /* JumpMark.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A02D811ABFCC72000B56F3 /* JumpMark.m */; };
 		02A02D851ABFCFFE000B56F3 /* JumpMarkList.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A02D841ABFCFFE000B56F3 /* JumpMarkList.m */; };
 		02A652851ABFB43F001F44D7 /* DVTFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02A652831ABFB43F001F44D7 /* DVTFoundation.framework */; };
@@ -19,10 +25,27 @@
 		02A6528A1ABFB458001F44D7 /* IDEKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02A652881ABFB458001F44D7 /* IDEKit.framework */; };
 		02A6528C1ABFB485001F44D7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02A6528B1ABFB485001F44D7 /* Cocoa.framework */; };
 		02A652991ABFBAA1001F44D7 /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A652971ABFBAA1001F44D7 /* JRSwizzle.m */; };
+		02B54CE01B5CDFB800488A78 /* JumpMarksTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B54CDF1B5CDFB800488A78 /* JumpMarksTest.m */; };
 		3E0543C51AD0D4680077AA8B /* DevToolsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0543C41AD0D4680077AA8B /* DevToolsCore.framework */; };
 		3E2490D31AD20B1000225CA1 /* IDEWorkspaceDocument+JumpMarks.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2490D21AD20B1000225CA1 /* IDEWorkspaceDocument+JumpMarks.m */; };
 		3E6F07511AD280E50049F945 /* DVTTextSidebarView+JumpMarks.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E6F07501AD280E50049F945 /* DVTTextSidebarView+JumpMarks.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		023076921B5F433500978BFE /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				023076971B60926300978BFE /* OCMock.framework in Copy Frameworks */,
+				023076931B5F437F00978BFE /* Expecta.framework in Copy Frameworks */,
+				023076941B5F437F00978BFE /* Specta.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		02306CAC1ABFA2DC00C3FD5A /* JumpMarks.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JumpMarks.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -32,13 +55,16 @@
 		02306CB61ABFA2DC00C3FD5A /* JumpMarks.xcscheme */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = JumpMarks.xcscheme; path = JumpMarks.xcodeproj/xcshareddata/xcschemes/JumpMarks.xcscheme; sourceTree = SOURCE_ROOT; };
 		02306CB81ABFA2DC00C3FD5A /* JumpMarks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JumpMarks.h; sourceTree = "<group>"; };
 		02306CB91ABFA2DC00C3FD5A /* JumpMarks.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JumpMarks.m; sourceTree = "<group>"; };
+		0230768B1B5F3FFD00978BFE /* Expecta.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Expecta.framework; path = Carthage/Build/Mac/Expecta.framework; sourceTree = "<group>"; };
+		0230768C1B5F3FFD00978BFE /* Specta.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Specta.framework; path = Carthage/Build/Mac/Specta.framework; sourceTree = "<group>"; };
+		023076951B60925A00978BFE /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMock.framework; path = Carthage/Build/Mac/OCMock.framework; sourceTree = "<group>"; };
 		02A02D801ABFCC72000B56F3 /* JumpMark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JumpMark.h; path = Models/JumpMark.h; sourceTree = "<group>"; };
 		02A02D811ABFCC72000B56F3 /* JumpMark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JumpMark.m; path = Models/JumpMark.m; sourceTree = "<group>"; };
 		02A02D831ABFCFFE000B56F3 /* JumpMarkList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JumpMarkList.h; path = Models/JumpMarkList.h; sourceTree = "<group>"; };
 		02A02D841ABFCFFE000B56F3 /* JumpMarkList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JumpMarkList.m; path = Models/JumpMarkList.m; sourceTree = "<group>"; };
 		02A652831ABFB43F001F44D7 /* DVTFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DVTFoundation.framework; path = ../SharedFrameworks/DVTFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		02A652841ABFB43F001F44D7 /* DVTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DVTKit.framework; path = ../SharedFrameworks/DVTKit.framework; sourceTree = DEVELOPER_DIR; };
-		02A652871ABFB458001F44D7 /* IDEFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IDEFoundation.framework; path = ..//Frameworks/IDEFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		02A652871ABFB458001F44D7 /* IDEFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IDEFoundation.framework; path = "..//Frameworks/IDEFoundation.framework"; sourceTree = DEVELOPER_DIR; };
 		02A652881ABFB458001F44D7 /* IDEKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IDEKit.framework; path = ../Frameworks/IDEKit.framework; sourceTree = DEVELOPER_DIR; };
 		02A6528B1ABFB485001F44D7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		02A6528D1ABFB4DA001F44D7 /* JumpMarks-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JumpMarks-Prefix.pch"; sourceTree = "<group>"; };
@@ -49,6 +75,9 @@
 		02A652961ABFBA84001F44D7 /* IDESourceEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IDESourceEditor.h; path = XcodeHeaders/IDESourceEditor.h; sourceTree = "<group>"; };
 		02A652971ABFBAA1001F44D7 /* JRSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JRSwizzle.m; path = External/JRSwizzle.m; sourceTree = "<group>"; };
 		02A652981ABFBAA1001F44D7 /* JRSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JRSwizzle.h; path = External/JRSwizzle.h; sourceTree = "<group>"; };
+		02B54CDB1B5CDFB800488A78 /* JumpMarksTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JumpMarksTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		02B54CDE1B5CDFB800488A78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02B54CDF1B5CDFB800488A78 /* JumpMarksTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JumpMarksTest.m; sourceTree = "<group>"; };
 		3E0543C41AD0D4680077AA8B /* DevToolsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DevToolsCore.framework; path = ../OtherFrameworks/DevToolsCore.framework; sourceTree = DEVELOPER_DIR; };
 		3E2490D11AD20B1000225CA1 /* IDEWorkspaceDocument+JumpMarks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "IDEWorkspaceDocument+JumpMarks.h"; path = "Categories/IDEWorkspaceDocument+JumpMarks.h"; sourceTree = "<group>"; };
 		3E2490D21AD20B1000225CA1 /* IDEWorkspaceDocument+JumpMarks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "IDEWorkspaceDocument+JumpMarks.m"; path = "Categories/IDEWorkspaceDocument+JumpMarks.m"; sourceTree = "<group>"; };
@@ -73,6 +102,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		02B54CD81B5CDFB800488A78 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0230768F1B5F421D00978BFE /* Expecta.framework in Frameworks */,
+				023076961B60925A00978BFE /* OCMock.framework in Frameworks */,
+				023076901B5F421D00978BFE /* Specta.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -80,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				02306CB31ABFA2DC00C3FD5A /* JumpMarks */,
+				02B54CDC1B5CDFB800488A78 /* JumpMarksTest */,
 				02306CAE1ABFA2DC00C3FD5A /* Frameworks */,
 				02306CAD1ABFA2DC00C3FD5A /* Products */,
 			);
@@ -89,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				02306CAC1ABFA2DC00C3FD5A /* JumpMarks.xcplugin */,
+				02B54CDB1B5CDFB800488A78 /* JumpMarksTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,6 +137,9 @@
 		02306CAE1ABFA2DC00C3FD5A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				023076951B60925A00978BFE /* OCMock.framework */,
+				0230768B1B5F3FFD00978BFE /* Expecta.framework */,
+				0230768C1B5F3FFD00978BFE /* Specta.framework */,
 				3E0543C41AD0D4680077AA8B /* DevToolsCore.framework */,
 				3E61A7B11ACE9F5D006A5967 /* Foundation.framework */,
 				02A6528B1ABFB485001F44D7 /* Cocoa.framework */,
@@ -176,6 +220,23 @@
 			name = "Xcode Headers";
 			sourceTree = "<group>";
 		};
+		02B54CDC1B5CDFB800488A78 /* JumpMarksTest */ = {
+			isa = PBXGroup;
+			children = (
+				02B54CDF1B5CDFB800488A78 /* JumpMarksTest.m */,
+				02B54CDD1B5CDFB800488A78 /* Supporting Files */,
+			);
+			path = JumpMarksTest;
+			sourceTree = "<group>";
+		};
+		02B54CDD1B5CDFB800488A78 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				02B54CDE1B5CDFB800488A78 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -196,6 +257,24 @@
 			productReference = 02306CAC1ABFA2DC00C3FD5A /* JumpMarks.xcplugin */;
 			productType = "com.apple.product-type.bundle";
 		};
+		02B54CDA1B5CDFB800488A78 /* JumpMarksTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02B54CE31B5CDFB800488A78 /* Build configuration list for PBXNativeTarget "JumpMarksTest" */;
+			buildPhases = (
+				02B54CD71B5CDFB800488A78 /* Sources */,
+				02B54CD81B5CDFB800488A78 /* Frameworks */,
+				02B54CD91B5CDFB800488A78 /* Resources */,
+				023076921B5F433500978BFE /* Copy Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JumpMarksTest;
+			productName = JumpMarksTest;
+			productReference = 02B54CDB1B5CDFB800488A78 /* JumpMarksTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -207,6 +286,9 @@
 				TargetAttributes = {
 					02306CAB1ABFA2DC00C3FD5A = {
 						CreatedOnToolsVersion = 6.1.1;
+					};
+					02B54CDA1B5CDFB800488A78 = {
+						CreatedOnToolsVersion = 6.4;
 					};
 				};
 			};
@@ -223,6 +305,7 @@
 			projectRoot = "";
 			targets = (
 				02306CAB1ABFA2DC00C3FD5A /* JumpMarks */,
+				02B54CDA1B5CDFB800488A78 /* JumpMarksTest */,
 			);
 		};
 /* End PBXProject section */
@@ -233,6 +316,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				02306CB71ABFA2DC00C3FD5A /* JumpMarks.xcscheme in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02B54CD91B5CDFB800488A78 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +339,14 @@
 				3E2490D31AD20B1000225CA1 /* IDEWorkspaceDocument+JumpMarks.m in Sources */,
 				02306CBA1ABFA2DC00C3FD5A /* JumpMarks.m in Sources */,
 				3E6F07511AD280E50049F945 /* DVTTextSidebarView+JumpMarks.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02B54CD71B5CDFB800488A78 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02B54CE01B5CDFB800488A78 /* JumpMarksTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +464,49 @@
 			};
 			name = Release;
 		};
+		02B54CE11B5CDFB800488A78 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = JumpMarksTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		02B54CE21B5CDFB800488A78 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = JumpMarksTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -383,6 +524,15 @@
 			buildConfigurations = (
 				02306CBE1ABFA2DC00C3FD5A /* Debug */,
 				02306CBF1ABFA2DC00C3FD5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		02B54CE31B5CDFB800488A78 /* Build configuration list for PBXNativeTarget "JumpMarksTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02B54CE11B5CDFB800488A78 /* Debug */,
+				02B54CE21B5CDFB800488A78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

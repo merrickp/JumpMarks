@@ -1,0 +1,3 @@
+github "specta/expecta" "c52e84681323ad42a47e6e96fd6debb577a26cc1"
+github "erikdoe/ocmock" "a37631568624fa65034d4621d072b45c54c4619c"
+github "specta/specta" "v0.5.0"

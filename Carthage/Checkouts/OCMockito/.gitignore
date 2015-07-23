@@ -1,0 +1,9 @@
+.DS_Store
+.idea/
+build/
+*.pbxuser
+*.perspectivev3
+project.xcworkspace/
+xcuserdata/
+OCHamcrest*
+compile_commands.json
