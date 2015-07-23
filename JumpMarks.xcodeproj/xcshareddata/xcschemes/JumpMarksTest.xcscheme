@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "02A652791ABFB387001F44D7"
+               BlueprintIdentifier = "02B54CDA1B5CDFB800488A78"
                BuildableName = "JumpMarksTest.xctest"
                BlueprintName = "JumpMarksTest"
                ReferencedContainer = "container:JumpMarks.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "02A652791ABFB387001F44D7"
+               BlueprintIdentifier = "02B54CDA1B5CDFB800488A78"
                BuildableName = "JumpMarksTest.xctest"
                BlueprintName = "JumpMarksTest"
                ReferencedContainer = "container:JumpMarks.xcodeproj">
@@ -42,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "02A652791ABFB387001F44D7"
+            BlueprintIdentifier = "02B54CDA1B5CDFB800488A78"
             BuildableName = "JumpMarksTest.xctest"
             BlueprintName = "JumpMarksTest"
             ReferencedContainer = "container:JumpMarks.xcodeproj">
@@ -61,7 +61,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "02A652791ABFB387001F44D7"
+            BlueprintIdentifier = "02B54CDA1B5CDFB800488A78"
             BuildableName = "JumpMarksTest.xctest"
             BlueprintName = "JumpMarksTest"
             ReferencedContainer = "container:JumpMarks.xcodeproj">
@@ -79,7 +79,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "02A652791ABFB387001F44D7"
+            BlueprintIdentifier = "02B54CDA1B5CDFB800488A78"
             BuildableName = "JumpMarksTest.xctest"
             BlueprintName = "JumpMarksTest"
             ReferencedContainer = "container:JumpMarks.xcodeproj">
