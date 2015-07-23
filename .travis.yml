@@ -3,6 +3,7 @@ xcode_project: JumpMarks.xcodeproj
 xcode_scheme: JumpMarksTest
 
 before_install:
+  - brew update
   - brew install carthage
   - carthage checkout
   - carthage build
