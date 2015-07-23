@@ -1,6 +1,7 @@
 language: objective-c
 xcode_project: JumpMarks.xcodeproj
 xcode_scheme: JumpMarksTest
+osx_image: xcode6.4
 
 before_install:
   - brew update
