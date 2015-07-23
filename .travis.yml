@@ -2,6 +2,11 @@ language: objective-c
 xcode_project: JumpMarks.xcodeproj
 xcode_scheme: JumpMarksTest
 
+before_install:
+  - brew install carthage
+  - carthage checkout
+  - carthage build
+
 branches:
   only:
     - master
