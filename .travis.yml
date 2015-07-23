@@ -1,6 +1,6 @@
 language: objective-c
 xcode_project: JumpMarks.xcodeproj
-xcode_scheme: JumpMarksTests
+xcode_scheme: JumpMarksTest
 
 branches:
   only:
