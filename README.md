@@ -9,8 +9,14 @@ JumpMarks is an Xcode plugin to navigate your project files by numbered bookmark
 Whatever the need is to navigate your code efficiently, JumpMarks allows you to set numbered bookmarks (0-9) to jump around these points in your code. Simply type `Shift + Option + [0-9]` to set a mark at the currently selected line in your open file editor, and then type `Option + [0-9]` to jump back to that mark later.
 
 #Installation#
+Install by either:
 
-####Build from Source####
+####1. Use Alcatraz (Easy Mode)####
+- Install from [Alcatraz](http://alcatraz.io)
+
+###or###
+
+####2. Build from Source (Manual Labor)####
 - Build the Xcode project. The plugin will be installed in `~/Library/Application Support/Developer/Shared/Xcode/Plug-ins`.
 - Restart Xcode.
 
