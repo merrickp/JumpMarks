@@ -37,8 +37,8 @@
 
     if([fileMarks count]) {
         NSSortDescriptor *lineNumberSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"lineNumber" ascending:YES];
-        NSArray *lineMarksAscending = [fileMarks sortedArrayUsingDescriptors:@[lineNumberSortDescriptor]];
-        NSEnumerator *markEnumerator = [lineMarksAscending objectEnumerator];
+        NSArray<__kindof JumpMark*> *lineMarksAscending = [fileMarks sortedArrayUsingDescriptors:@[lineNumberSortDescriptor]];
+        NSEnumerator<__kindof JumpMark*> *markEnumerator = [lineMarksAscending objectEnumerator];
         JumpMark *nextMark = [markEnumerator nextObject];
         
         for (NSUInteger i=0; i<indexCount && nextMark != nil; i++) {

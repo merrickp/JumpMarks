@@ -11,15 +11,15 @@
 
 @interface JumpMarkList ()
 
-@property(strong, nonatomic) NSMutableDictionary *marksDict;
+@property (strong, nonatomic) NSMutableDictionary *marksDict;
 
 @end
 
 @implementation JumpMarkList
 
-- (instancetype)initWithCustomDataPath:(NSString*)customDataPath {
+- (instancetype)initWithCustomDataPath:(NSString *)customDataPath {
     self = [super init];
-    if(self) {
+    if (self) {
         _marksDict = [NSMutableDictionary new];
         _customDataPath = customDataPath;
         _filePath = [NSString pathWithComponents:@[customDataPath,
@@ -32,9 +32,9 @@
 #pragma mark - Persistence methods
 
 - (void)load {
-    if(_filePath) {
+    if (_filePath) {
         id data = [NSKeyedUnarchiver unarchiveObjectWithFile:_filePath];
-        if([data isKindOfClass:[NSDictionary class]]) {
+        if ([data isKindOfClass:[NSDictionary class]]) {
             [data enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
                 if([key isKindOfClass:[NSNumber class]] && [obj isKindOfClass:[JumpMark class]]) {
                     _marksDict[key] = obj;
@@ -45,29 +45,29 @@
 }
 
 - (void)flush {
-	if (_filePath) {
-		NSDictionary *archiveDict = [_marksDict copy];
-		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+    if (_filePath) {
+        NSDictionary *archiveDict = [_marksDict copy];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
 			[NSKeyedArchiver archiveRootObject:archiveDict toFile:_filePath];
-		});
-	}
+        });
+    }
 }
 
 #pragma mark - Mark manipulation/retrieval
 
-- (JumpMark*)getMarkNumber:(NSInteger)markNumber {
+- (JumpMark *)getMarkNumber:(NSInteger)markNumber {
     return _marksDict[@(markNumber)];
 }
 
 - (void)toggleMarkNumber:(NSInteger)markNumber filePath:(NSString *)filePath lineNumber:(NSInteger)lineNumber {
-	JumpMark *duplicateMark = [self markForFilePath:filePath lineNumber:lineNumber];
-	if(duplicateMark) {
-		[self removeMarkNumber:duplicateMark.markNumber];
-		if(duplicateMark.markNumber == markNumber) {
-			return;
-		}
-	}
-    _marksDict[@(markNumber)] =  [JumpMark textEditorMark:filePath lineNumber:lineNumber markNumber:markNumber];
+    JumpMark *duplicateMark = [self markForFilePath:filePath lineNumber:lineNumber];
+    if (duplicateMark) {
+        [self removeMarkNumber:duplicateMark.markNumber];
+        if (duplicateMark.markNumber == markNumber) {
+            return;
+        }
+    }
+    _marksDict[@(markNumber)] = [JumpMark textEditorMark:filePath lineNumber:lineNumber markNumber:markNumber];
 }
 
 - (void)removeMarkNumber:(NSInteger)markNumber {
@@ -75,42 +75,43 @@
 }
 
 - (void)removeAllMarks {
-	[_marksDict removeAllObjects];
+    [_marksDict removeAllObjects];
 }
 
-- (NSNumber*)getNextMarkNumber:(NSInteger)lastMarkNumber {
-	NSArray *keys = [[_marksDict allKeys] sortedArrayUsingSelector:@selector(compare:)];
-	for(NSNumber *key in keys) {
-		if([key integerValue] > lastMarkNumber)
-			return key;
-	}
-	// return wrapped value or nil
-	return [keys firstObject];
+- (NSNumber *)getNextMarkNumber:(NSInteger)lastMarkNumber {
+    NSArray *keys = [[_marksDict allKeys] sortedArrayUsingSelector:@selector(compare:)];
+    for (NSNumber *key in keys) {
+        if ([key integerValue] > lastMarkNumber)
+            return key;
+    }
+    // return wrapped value or nil
+    return [keys firstObject];
 }
 
-- (NSNumber*)getPrevMarkNumber:(NSInteger)lastMarkNumber {
-	NSArray *keys = [[_marksDict allKeys] sortedArrayUsingSelector:@selector(compare:)];
-	for(NSNumber *key in [keys reverseObjectEnumerator]) {
-		if([key integerValue] < lastMarkNumber)
-			return key;
-	}
-	// return wrapped value or nil
-	return [keys lastObject];
+- (NSNumber *)getPrevMarkNumber:(NSInteger)lastMarkNumber {
+    NSArray *keys = [[_marksDict allKeys] sortedArrayUsingSelector:@selector(compare:)];
+    for (NSNumber *key in [keys reverseObjectEnumerator]) {
+        if ([key integerValue] < lastMarkNumber)
+            return key;
+    }
+    // return wrapped value or nil
+    return [keys lastObject];
 }
 
-- (NSArray *)marksForFilePath:(NSString *)filePath {
-	return [_marksDict objectsForKeys:[[_marksDict keysOfEntriesPassingTest:^BOOL(id key, JumpMark *mark, BOOL *stop) {
+- (NSArray<__kindof JumpMark *> *)marksForFilePath:(NSString *)filePath {
+    return [_marksDict objectsForKeys:[[_marksDict keysOfEntriesPassingTest:^BOOL(id key, JumpMark *mark, BOOL *stop) {
 		return [filePath isEqualToString:mark.filePath];
-	}] allObjects] notFoundMarker:[NSNull null]];
+                       }] allObjects]
+                       notFoundMarker:[NSNull null]];
 }
 
-- (JumpMark*)markForFilePath:(NSString *)filePath lineNumber:(NSInteger)lineNumber {
-	for(JumpMark* mark in [_marksDict objectEnumerator]) {
-		if([filePath isEqualToString:mark.filePath] && lineNumber == mark.lineNumber) {
-			return mark;
-		}
-	}
-	return nil;
+- (JumpMark *)markForFilePath:(NSString *)filePath lineNumber:(NSInteger)lineNumber {
+    for (JumpMark *mark in [_marksDict objectEnumerator]) {
+        if ([filePath isEqualToString:mark.filePath] && lineNumber == mark.lineNumber) {
+            return mark;
+        }
+    }
+    return nil;
 }
 
 @end
