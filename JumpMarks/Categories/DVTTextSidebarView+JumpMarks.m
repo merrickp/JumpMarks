@@ -16,8 +16,9 @@
 
 + (void)load {
     NSError *error = nil;
-    [DVTTextSidebarView jr_swizzleMethod:@selector(_drawLineNumbersInSidebarRect:foldedIndexes:count:linesToInvert:linesToReplace:getParaRectBlock:)
-                              withMethod:@selector(jumpmarks_drawLineNumbersInSidebarRect:foldedIndexes:count:linesToInvert:linesToReplace:getParaRectBlock:)
+
+    [DVTTextSidebarView jr_swizzleMethod:@selector(_drawLineNumbersInSidebarRect:foldedIndexes:count:linesToInvert:linesToHighlight:linesToReplace:textView:getParaRectBlock:)
+                              withMethod:@selector(jumpmarks_drawLineNumbersInSidebarRect:foldedIndexes:count:linesToInvert:linesToHighlight:linesToReplace:textView:getParaRectBlock:)
                                    error:&error];
 }
 
@@ -25,9 +26,10 @@
                                  foldedIndexes:(NSUInteger *)indexes
                                          count:(NSUInteger)indexCount
                                  linesToInvert:(id)invert
+                              linesToHighlight:(id)highlight
                                 linesToReplace:(id)replace
-                              getParaRectBlock:(id)rectBlock {
-    
+                                      textView:(id)textView
+                              getParaRectBlock:(GetParaBlock)rectBlock {
     NSArray *fileMarks = nil;
 	if([self.window.delegate isKindOfClass:IDEWorkspaceWindowController.class]) {
 		IDEWorkspaceWindowController *controller = (IDEWorkspaceWindowController*)self.window.delegate;
@@ -53,7 +55,8 @@
     }
     
     [self jumpmarks_drawLineNumbersInSidebarRect:rect foldedIndexes:indexes count:indexCount
-                                   linesToInvert:invert linesToReplace:replace getParaRectBlock:rectBlock];
+                                   linesToInvert:invert linesToHighlight:highlight linesToReplace:replace
+                                        textView:textView getParaRectBlock:rectBlock];
 }
 
 - (void)drawMarkAtLineNumber:(NSInteger)lineNumber withMarkNumber:(NSInteger)markNumber {
