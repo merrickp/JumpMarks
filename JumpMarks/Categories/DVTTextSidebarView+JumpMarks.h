@@ -7,15 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DVTKit.h"
+#import "DVTTextSidebarView.h"
 
 @interface DVTTextSidebarView (JumpMarks)
 
-- (void)jumpmarks_drawLineNumbersInSidebarRect:(CGRect)arg1
+- (void)jumpmarks_drawLineNumbersInSidebarRect:(CGRect)rect
                                  foldedIndexes:(NSUInteger *)indexes
                                          count:(NSUInteger)indexCount
                                  linesToInvert:(id)invert
+                              linesToHighlight:(id)highlight
                                 linesToReplace:(id)replace
-                              getParaRectBlock:(id)rectBlock;
+                                      textView:(id)textView
+                              getParaRectBlock:(GetParaBlock)rectBlock;
 
 @end

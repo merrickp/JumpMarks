@@ -78,6 +78,7 @@
 		02B54CDB1B5CDFB800488A78 /* JumpMarksTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JumpMarksTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02B54CDE1B5CDFB800488A78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02B54CDF1B5CDFB800488A78 /* JumpMarksTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JumpMarksTest.m; sourceTree = "<group>"; };
+		02C8B97A1DB43E5700FC623C /* DVTTextSidebarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DVTTextSidebarView.h; path = XcodeHeaders/DVTTextSidebarView.h; sourceTree = "<group>"; };
 		3E0543C41AD0D4680077AA8B /* DevToolsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DevToolsCore.framework; path = ../OtherFrameworks/DevToolsCore.framework; sourceTree = DEVELOPER_DIR; };
 		3E2490D11AD20B1000225CA1 /* IDEWorkspaceDocument+JumpMarks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "IDEWorkspaceDocument+JumpMarks.h"; path = "Categories/IDEWorkspaceDocument+JumpMarks.h"; sourceTree = "<group>"; };
 		3E2490D21AD20B1000225CA1 /* IDEWorkspaceDocument+JumpMarks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "IDEWorkspaceDocument+JumpMarks.m"; path = "Categories/IDEWorkspaceDocument+JumpMarks.m"; sourceTree = "<group>"; };
@@ -216,6 +217,7 @@
 				02A652941ABFBA84001F44D7 /* IDEFoundation.h */,
 				02A652951ABFBA84001F44D7 /* IDEKit.h */,
 				02A652961ABFBA84001F44D7 /* IDESourceEditor.h */,
+				02C8B97A1DB43E5700FC623C /* DVTTextSidebarView.h */,
 			);
 			name = "Xcode Headers";
 			sourceTree = "<group>";
@@ -281,7 +283,7 @@
 		02306CA41ABFA2DC00C3FD5A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Merrick Poon";
 				TargetAttributes = {
 					02306CAB1ABFA2DC00C3FD5A = {
@@ -366,8 +368,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
@@ -375,6 +379,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -405,14 +410,17 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
