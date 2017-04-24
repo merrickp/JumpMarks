@@ -26,7 +26,6 @@
 		02A6528C1ABFB485001F44D7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02A6528B1ABFB485001F44D7 /* Cocoa.framework */; };
 		02A652991ABFBAA1001F44D7 /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A652971ABFBAA1001F44D7 /* JRSwizzle.m */; };
 		02B54CE01B5CDFB800488A78 /* JumpMarksTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B54CDF1B5CDFB800488A78 /* JumpMarksTest.m */; };
-		3E0543C51AD0D4680077AA8B /* DevToolsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0543C41AD0D4680077AA8B /* DevToolsCore.framework */; };
 		3E2490D31AD20B1000225CA1 /* IDEWorkspaceDocument+JumpMarks.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2490D21AD20B1000225CA1 /* IDEWorkspaceDocument+JumpMarks.m */; };
 		3E6F07511AD280E50049F945 /* DVTTextSidebarView+JumpMarks.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E6F07501AD280E50049F945 /* DVTTextSidebarView+JumpMarks.m */; };
 /* End PBXBuildFile section */
@@ -79,7 +78,6 @@
 		02B54CDE1B5CDFB800488A78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02B54CDF1B5CDFB800488A78 /* JumpMarksTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JumpMarksTest.m; sourceTree = "<group>"; };
 		02C8B97A1DB43E5700FC623C /* DVTTextSidebarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DVTTextSidebarView.h; path = XcodeHeaders/DVTTextSidebarView.h; sourceTree = "<group>"; };
-		3E0543C41AD0D4680077AA8B /* DevToolsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DevToolsCore.framework; path = ../OtherFrameworks/DevToolsCore.framework; sourceTree = DEVELOPER_DIR; };
 		3E2490D11AD20B1000225CA1 /* IDEWorkspaceDocument+JumpMarks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "IDEWorkspaceDocument+JumpMarks.h"; path = "Categories/IDEWorkspaceDocument+JumpMarks.h"; sourceTree = "<group>"; };
 		3E2490D21AD20B1000225CA1 /* IDEWorkspaceDocument+JumpMarks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "IDEWorkspaceDocument+JumpMarks.m"; path = "Categories/IDEWorkspaceDocument+JumpMarks.m"; sourceTree = "<group>"; };
 		3E61A7B11ACE9F5D006A5967 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -92,7 +90,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E0543C51AD0D4680077AA8B /* DevToolsCore.framework in Frameworks */,
 				02A6528C1ABFB485001F44D7 /* Cocoa.framework in Frameworks */,
 				02A652891ABFB458001F44D7 /* IDEFoundation.framework in Frameworks */,
 				02A6528A1ABFB458001F44D7 /* IDEKit.framework in Frameworks */,
@@ -141,7 +138,6 @@
 				023076951B60925A00978BFE /* OCMock.framework */,
 				0230768B1B5F3FFD00978BFE /* Expecta.framework */,
 				0230768C1B5F3FFD00978BFE /* Specta.framework */,
-				3E0543C41AD0D4680077AA8B /* DevToolsCore.framework */,
 				3E61A7B11ACE9F5D006A5967 /* Foundation.framework */,
 				02A6528B1ABFB485001F44D7 /* Cocoa.framework */,
 				02A652871ABFB458001F44D7 /* IDEFoundation.framework */,
