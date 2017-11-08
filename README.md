@@ -8,6 +8,8 @@ JumpMarks is an Xcode plugin to navigate your project files by numbered bookmark
 
 Whatever the need is to navigate your code efficiently, JumpMarks allows you to set numbered bookmarks (0-9) to jump around these points in your code. Simply type `Shift + Option + [0-9]` to set a mark at the currently selected line in your open file editor, and then type `Option + [0-9]` to jump back to that mark later.
 
+In order to use this plugin in Xcode 8 and above, you must [unsign the Xcode](https://github.com/inket/update_xcode_plugins).
+
 # Installation
 Install by either:
 
@@ -24,18 +26,18 @@ To uninstall, remove the plugin file `JumpMarks.xcplugin` from `~/Library/Applic
 
 ## Usage
 #### Toggling JumpMarks:
-Toggle by typing <kbd>Shift</kbd> + <kbd>Option</kbd> + [<kbd>0</kbd>-<kbd>9</kbd>]
+Toggle by typing <kbd>Shift</kbd> + <kbd>Option</kbd> + [<kbd>0</kbd>-<kbd>7</kbd>]
 ![toggle_navigation](https://github.com/merrickp/JumpMarks/blob/assets/toggle.gif)
 
 #### Go to specific JumpMark:
-Jump directly to numbered mark by typing <kbd>Option</kbd> + [<kbd>0</kbd>-<kbd>9</kbd>]
+Jump directly to numbered mark by typing <kbd>Option</kbd> + [<kbd>0</kbd>-<kbd>7</kbd>]
 ![jump_navigation](https://github.com/merrickp/JumpMarks/blob/assets/jump.gif)
 
 #### Go to next/previous JumpMark:
 Jump to next/prev set mark by typing <kbd>Option</kbd> + <kbd>]</kbd> or <kbd>Option</kbd> + <kbd>[</kbd>, respectively
 ![next_navigation](https://github.com/merrickp/JumpMarks/blob/assets/next.gif)
 
-Other options can be found in the `JumpMarks` submenu added in the `View` menu in the menu bar.
+Other options can be found in the `JumpMarks` submenu added in the `Navigate` menu in the menu bar.
 
 Marks will be persisted in a plist file named ${USER}.jumpmarks in the project's xcuserdata.
 

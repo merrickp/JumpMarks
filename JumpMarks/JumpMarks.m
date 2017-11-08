@@ -12,9 +12,9 @@
 #import "JumpMarkList.h"
 #import "IDEWorkspaceDocument+JumpMarks.h"
 
-static JumpMarks *sharedPlugin;
+#define NUM_MARKS 7
 
-#define NUM_MARKS 10
+static JumpMarks *sharedPlugin;
 
 @interface JumpMarks()
 
@@ -27,19 +27,20 @@ static JumpMarks *sharedPlugin;
 
 #pragma mark - Lifecycle functions
 
++ (instancetype)sharedPlugin {
+    return sharedPlugin;
+}
+
 + (void)pluginDidLoad:(NSBundle *)plugin
 {
     static dispatch_once_t onceToken;
     NSString *currentApplicationName = [[NSBundle mainBundle] infoDictionary][@"CFBundleName"];
-    if ([currentApplicationName isEqual:@"Xcode"]) {
+    if ([currentApplicationName isEqual:@"Xcode"]
+        || [[currentApplicationName lowercaseString] hasPrefix:@"xcode"]) {
         dispatch_once(&onceToken, ^{
             sharedPlugin = [[self alloc] initWithBundle:plugin];
         });
     }
-}
-
-+ (instancetype)sharedPlugin {
-    return sharedPlugin;
 }
 
 - (id)initWithBundle:(NSBundle *)plugin {
@@ -58,7 +59,7 @@ static JumpMarks *sharedPlugin;
 }
 
 - (void)buildMenuItems {
-    NSMenuItem *menuItem = [[NSApp mainMenu] itemWithTitle:@"View"];
+    NSMenuItem *menuItem = [[NSApp mainMenu] itemWithTitle:@"Navigate"];
     if (menuItem) {
         [[menuItem submenu] addItem:[NSMenuItem separatorItem]];
         NSMenuItem *jumpMarks = [[menuItem submenu] addItemWithTitle:@"JumpMarks" action:nil keyEquivalent:@""];
@@ -66,15 +67,15 @@ static JumpMarks *sharedPlugin;
         jumpMarks.submenu = submenu;
         
         // General shortcuts
-        NSMenuItem *clearMarks = [submenu addItemWithTitle:@"Clear all Marks" action:@selector(clearMarks:) keyEquivalent:@"C"];
+        NSMenuItem *clearMarks = [submenu addItemWithTitle:@"Clear all" action:@selector(clearMarks:) keyEquivalent:@"C"];
 		[clearMarks setKeyEquivalentModifierMask:NSAlternateKeyMask];
         clearMarks.target = self;
         
-        NSMenuItem *prevMark = [submenu addItemWithTitle:@"Jump To Prev Mark" action:@selector(jumpToPrevMark:) keyEquivalent:@"["];
+        NSMenuItem *prevMark = [submenu addItemWithTitle:@"Jump To Previous" action:@selector(jumpToPrevMark:) keyEquivalent:@"["];
         [prevMark setKeyEquivalentModifierMask:NSAlternateKeyMask];
         prevMark.target = self;
         
-        NSMenuItem *nextMark = [submenu addItemWithTitle:@"Jump To Next Mark" action:@selector(jumpToNextMark:) keyEquivalent:@"]"];
+        NSMenuItem *nextMark = [submenu addItemWithTitle:@"Jump To Next" action:@selector(jumpToNextMark:) keyEquivalent:@"]"];
         [nextMark setKeyEquivalentModifierMask:NSAlternateKeyMask];
         nextMark.target = self;
         
@@ -82,7 +83,7 @@ static JumpMarks *sharedPlugin;
 
         // Toggle mark shortcuts
         for(int i=0; i<NUM_MARKS; i++) {
-            NSMenuItem *toggleMark = [submenu addItemWithTitle:[NSString stringWithFormat:@"Toggle #%d", i]
+            NSMenuItem *toggleMark = [submenu addItemWithTitle:[NSString stringWithFormat:@"Place #%d", i]
                                                         action:@selector(toggleMark:) keyEquivalent:[NSString stringWithFormat:@"%d", i]];
             [toggleMark setKeyEquivalentModifierMask:NSAlternateKeyMask | NSShiftKeyMask];
             [toggleMark setRepresentedObject:@(i)];
@@ -224,6 +225,11 @@ static JumpMarks *sharedPlugin;
     NSRange characterRange = [textStorage characterRangeForLineRange:NSMakeRange(lineNumber, 0)];
     
     return characterRange.location; 
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end
