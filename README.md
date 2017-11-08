@@ -37,7 +37,7 @@ Jump directly to numbered mark by typing <kbd>Option</kbd> + [<kbd>0</kbd>-<kbd>
 Jump to next/prev set mark by typing <kbd>Option</kbd> + <kbd>]</kbd> or <kbd>Option</kbd> + <kbd>[</kbd>, respectively
 ![next_navigation](https://github.com/merrickp/JumpMarks/blob/assets/next.gif)
 
-Other options can be found in the `JumpMarks` submenu added in the `Navigate` menu in the menu bar.
+Other options can be found in the `JumpMarks` submenu added in the `Editor` menu in the menu bar.
 
 Marks will be persisted in a plist file named ${USER}.jumpmarks in the project's xcuserdata.
 

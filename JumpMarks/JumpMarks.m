@@ -59,7 +59,7 @@ static JumpMarks *sharedPlugin;
 }
 
 - (void)buildMenuItems {
-    NSMenuItem *menuItem = [[NSApp mainMenu] itemWithTitle:@"Navigate"];
+    NSMenuItem *menuItem = [[NSApp mainMenu] itemWithTitle:@"Editor"];
     if (menuItem) {
         [[menuItem submenu] addItem:[NSMenuItem separatorItem]];
         NSMenuItem *jumpMarks = [[menuItem submenu] addItemWithTitle:@"JumpMarks" action:nil keyEquivalent:@""];
