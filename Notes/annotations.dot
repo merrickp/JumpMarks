@@ -1,0 +1,34 @@
+digraph G {
+    label="Xcode Annotations"
+    labelloc="t"
+
+    fontname="Menlo"
+    graph [ fontname="Menlo", fontcolor=blue ];
+    node [ fontname="Menlo", style="filled", shape="record"];
+    edge [ fontname="Menlo", fontcolor="purple"];
+
+    subgraph cluster_annotations {
+      label="Annotation"
+
+      DVTAnnotationManager [label="{DVTAnnotationManager|<f1>annotationProviders: [DVTAnnotationProvider]}"]
+      DVTAnnotation [label="{<f0>DVTAnnotation|representedObject: id\nannotationDisplayName: id}"]
+      DVTTextAnnotation [label="{DVTTextAnnotation|wantsScrollbarMarker : Bool\nsidebarMarkerImage: NSImage\nlocation: DVTTextDocumentLocation}"]
+      DVTTextAnnotation -> DVTAnnotation [ arrowhead = "empty"]
+      DBGBreakpointAnnotation [label="{DBGBreakpointAnnotation|drawSidebarMarkerInRect:(CGRect) textView:(id)}"] 
+      DBGBreakpointAnnotation -> DVTTextAnnotation [ arrowhead = "empty"]
+      DVTAnnotationProvider:f0 -> DVTAnnotationManager:f1  [arrowhead="odiamond"]
+      DVTAnnotationProvider [label="{<f0>DVTAnnotationProvider|<f1>annotations: NSSet}"]
+      DVTAnnotation:f0 -> DVTAnnotationProvider:f1 [arrowhead="odiamond"]
+      IDEIssueAnnotationProvider:f0, IDEIssueAnnotationProvider:f1, IDEIssueAnnotationProvider:f2 -> DVTAnnotationProvider [ arrowhead = "empty"]
+      IDEIssueAnnotationProvider [label="{<f0>IDEIssueAnnotationProvider|<f1>DBGBreakpointAnnotationProvider|<f2>DBGInstructionPointerAnnotationProvider}"]
+      _TtC22IDEPegasusSourceEditor39SourceCodeEditorLocalAnnotationProvider -> DVTAnnotationProvider [ arrowhead = "empty"]
+      _TtC22IDEPegasusSourceEditor39SourceCodeEditorLocalAnnotationProvider [label="{IDEPegasusSourceEditor.SourceCodeEditorLocalAnnotationProvider|(id)annotationProviderForContext:(id)arg1 error:(id *)arg2}"]
+    }
+
+    subgraph cluster_ide {
+      label="IDE"
+      IDESourceCodeEditor:f1 -> DVTAnnotationProvider
+      IDESourceCodeEditor [label="{IDESourceCodeEditor|<f1>annotationProvider: DVTAnnotationProvider}"]
+      
+    }
+}
